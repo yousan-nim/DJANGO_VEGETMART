@@ -11,22 +11,18 @@
     <body>
         <nav class="py-6 px-6 flex justify-between items-center border-b border-gray-200" >
             <a href="/" class="text-xl font-semibold">VEGETMART</a>
-            <div class="space-x-6">
+            <div class="hidden w-full md:block md:w-auto space-x-6 " id="navbar-default">
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'item:new' %}"            class="text-lg font-semibold hover:text-gray-500">ADD NEW ITEM</a>
-                <a href="{% url 'item:items' %}"          class="text-lg font-semibold hover:text-gray-500">BROWSE</a>
-                <a href="{% url 'conversations:inbox' %}" class="text-lg font-semibold hover:text-gray-500">INBOX</a>
-                <a href="{% url 'dashboard:index' %}"     class="text-lg font-semibold hover:text-gray-500">DASHBOARD</a>
-
-                    <!-- <a href="#"  class="px-6 py-3 text-lg font-semibold bg-gray-500 rounded-xl hover:bg-gray-700">Inbox</a>
-                    <a href="{% url 'dashboard:index' %}"  class="px-6 py-3 text-lg font-semibold bg-gray-500 rounded-xl hover:bg-gray-700">Dashboard</a> -->
-
+                    <a href="{% url 'item:new' %}"            class="text-lg font-semibold hover:text-gray-500 md:hover:bg-transparent">ADD NEW ITEM</a>
+                    <a href="{% url 'item:items' %}"          class="text-lg font-semibold hover:text-gray-500 md:hover:bg-transparent">BROWSE</a>
+                    <a href="{% url 'conversations:inbox' %}" class="text-lg font-semibold hover:text-gray-500 md:hover:bg-transparent">INBOX</a>
+                    <a href="{% url 'dashboard:index' %}"     class="text-lg font-semibold hover:text-gray-500 md:hover:bg-transparent">DASHBOARD</a>
                     <a href="{% url 'core:logout' %}"         class="px-8 py-4 text-lg font-semibold bg-teal-500 rounded-xl hover:bg-teal-700">LOG OUT</a>
                 {% else %}
-                    <a href="{% url 'item:items' %}"          class="text-lg font-semibold hover:text-gray-500">BROWSE</a>
-                    <a href="{% url 'conversations:inbox' %}" class="text-lg font-semibold hover:text-gray-500">INBOX</a>
-                    <a href="{% url 'core:signup' %}"         class="px-8 py-4 text-lg font-semibold bg-teal-500 rounded-xl hover:bg-teal-700">SIGN UP</a>
-                    <a href="{% url 'core:login' %}"          class="px-8 py-4 text-lg font-semibold bg-gray-500 rounded-xl hover:bg-gray-700">LOGIN</a>
+                    <a href="{% url 'item:items' %}"          class="text-lg font-semibold hover:text-gray-500 md:hover:bg-transparent">BROWSE</a>
+                    <a href="{% url 'conversations:inbox' %}" class="text-lg font-semibold hover:text-gray-500 ">INBOX</a>
+                    <a href="{% url 'core:signup' %}"         class="px-8 py-4 text-lg font-semibold bg-teal-500 rounded-xl hover:bg-teal-700 md:hover:bg-transparent">SIGN UP</a>
+                    <a href="{% url 'core:login' %}"          class="px-8 py-4 text-lg font-semibold bg-gray-500 rounded-xl hover:bg-gray-700 md:hover:bg-transparent">LOGIN</a>
                 {% endif %}
             </div>
         </nav>
@@ -38,7 +34,10 @@
     <footer class="py-6 px-6 flex justify-between bg-gray-800">
         <div class="w-2/3 pr-10">
             <h3 class="mb-5 font-semibold text-gray-400">About</h3>
-            <p class="text-lg text-gray-500">Lorem ipsum bla bla bla. Lorem ipsum bla bla bla. Lorem ipsum bla bla bla.</p>
+            <p class="text-lg text-gray-500">Vegetables are an essential part of a healthy diet, and they are also some of the most delicious and versatile foods you can eat. Whether you are looking for a quick and easy side dish or you want to create a complex and flavorful main course, vegetables can help you achieve your culinary goals.
+
+                If you are looking for the freshest and most affordable vegetables, the best place to shop is at your local vegetable market. 
+            </p>
         </div>
         <div class="w-1/3">
             <h3 class="mb-5 font-semibold text-gray-400">Menu</h3>
